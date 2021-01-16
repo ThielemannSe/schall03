@@ -6,11 +6,8 @@
 from math import log10
 import numpy as np
 from config import *
+import matplotlib.pyplot as plt
 
-
-
-def anzAchsen(bez):
-    pass
 
 def ausgangsleistung(bez):
     fz = ZUEGE[bez] 
@@ -25,7 +22,8 @@ def ausgangsleistung(bez):
             m = q[0]
             a = q[-1]
             for j in range(0, 8):
-                res = round(q[j+2] + a + 10 * log10(n0*n/n0) + PEGELKORREKTUREN[j] + log10(vfz/100), 5)
+                print(GESCHWINDIGKEITSFAKTOR[m][j])
+                res = round(q[j+2] + a + 10 * log10(n0*n/n0) + PEGELKORREKTUREN[j] + GESCHWINDIGKEITSFAKTOR[m][j] + log10(vfz/100), 5)
                 q_arr.append(res)
 
             fz_arr.append(q_arr)
@@ -35,4 +33,8 @@ def ausgangsleistung(bez):
 res = ausgangsleistung('ICE3_VOLLZUG')
 
 for r in res:
+    plt.plot(FREQUENZEN, r)
     print(r)
+
+
+plt.show()

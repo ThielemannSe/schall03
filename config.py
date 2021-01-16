@@ -31,7 +31,7 @@ GESCHWINDIGKEITSFAKTOR = {
     11 : [ 20,  20,  20,  20,  20,  20,  20,  20]
 }
 
-PEGELKORREKTUREN = [1, 1, 1, 7, 3 , 1, 1, 1]
+PEGELKORREKTUREN = [1, 1, 1, 4, -1, -4, -4, 1]
 
 
 # HGV Triebzug (Ein-, Zwei-, und Drei-System-Version)
